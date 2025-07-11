@@ -1,0 +1,30 @@
+# 📄 Nmap Service Version Detection Scan
+# Target: 127.0.0.1 (localhost)
+# Command: nmap -sV 127.0.0.1
+# Date: July 10, 2025
+
+# 🔍 Description:
+# This scan attempts to identify the services running on any open ports and determine their version numbers.
+
+# 🧠 Purpose:
+# - Verify which services are running on localhost
+# - Identify the specific version of each detected service
+# - Useful for checking for vulnerable software or outdated services
+
+# 🖥️ Output:
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-10 18:12 PDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00029s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT    STATE SERVICE VERSION
+631/tcp open  ipp     CUPS 2.4
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 6.45 seconds
+
+# ✅ Summary:
+- Detected one open port:
+  - **Port 631/tcp** is running **CUPS 2.4** (Common UNIX Printing System)
+- No other services were identified
+- This confirms that only the local print service is active
