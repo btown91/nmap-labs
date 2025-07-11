@@ -1,0 +1,26 @@
+# 📄 Nmap Basic Port Scan
+# Target: 127.0.0.1 (localhost)
+# Command: nmap -p- 127.0.0.1
+# Date: July 10, 2025
+
+# Description:
+# This scan checks all 65,535 TCP ports on the localhost to find any open services.
+
+# Purpose:
+# - Identify any open ports across the full range
+# - Catch services that may be running on non-standard ports
+
+#  Output:
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-10 18:13 PDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00021s latency).
+Not shown: 65534 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+631/tcp open  ipp
+
+Nmap done: 1 IP address (1 host up) scanned in 2.93 seconds
+
+# ✅ Summary:
+- Only port 631 (IPP – Internet Printing Protocol) is open.
+- No unexpected services were found.
