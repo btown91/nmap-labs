@@ -1,0 +1,45 @@
+# 📄 Nmap Default Script + Version Detection Scan
+# Target: 127.0.0.1 (localhost)
+# Command: nmap -sV --script=default 127.0.0.1
+# Date: July 10, 2025
+
+# 🔍 Description:
+This scan combines:
+- `-sV`: Service version detection
+- `--script=default`: Runs a set of default NSE (Nmap Scripting Engine) scripts based on the detected open services
+
+# 🧠 Purpose:
+- Identify services and their versions
+- Automatically run appropriate scripts (e.g. SSL cert analysis, HTTP titles, headers)
+- Gather banner info, metadata, and quick security insight
+
+Nmap picks scripts intelligently based on the **open ports and services** it sees. In this case, it recognized a CUPS (printing) service and ran HTTP-based scripts.
+
+# 🖥️ Output:
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-10 18:12 PDT  
+Nmap scan report for localhost (127.0.0.1)  
+Host is up (0.00029s latency).  
+Not shown: 999 closed tcp ports (conn-refused)  
+PORT    STATE SERVICE VERSION  
+631/tcp open  ipp     CUPS 2.4  
+|_http-server-header: CUPS/2.4 IPP/2.1  
+| http-robots.txt: 1 disallowed entry  
+|_/  
+|_http-title: Home - CUPS 2.4.12  
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .  
+Nmap done: 1 IP address (1 host up) scanned in 6.80 seconds
+
+# ✅ Summary:
+- Found CUPS printing service on **port 631/tcp**
+- Version: **CUPS 2.4**
+- Scripts returned:
+  - HTTP Server Header
+  - `robots.txt` entry showing restricted paths
+  - HTTP title of the service homepage
+
+# 🧩 Notes:
+This type of scan is very useful when:
+- Investigating web-based services
+- Gathering passive intel before launching deeper enumeration
