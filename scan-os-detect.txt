@@ -1,0 +1,39 @@
+# 📄 Nmap OS Detection Scan
+# Target: 127.0.0.1 (localhost)
+# Command: sudo nmap -O 127.0.0.1
+# Date: July 10, 2025
+
+# 🔍 Description:
+# This scan attempts to detect the **operating system** running on the target machine using TCP/IP fingerprinting.
+
+# 🧠 Purpose:
+# - Determine what OS (and kernel version) is running
+# - Useful for vulnerability assessment and network inventory
+# - Helps security analysts identify systems that may need patching
+
+# ⚠️ Note:
+# This scan **requires root/sudo privileges** to work correctly.
+
+# 🖥️ Output:
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-10 18:12 PDT  
+Nmap scan report for localhost (127.0.0.1)  
+Host is up (0.000090s latency).  
+Not shown: 999 closed tcp ports (reset)  
+PORT    STATE SERVICE  
+631/tcp open  ipp  
+
+Device type: general purpose  
+Running: Linux 2.6.X|5.X  
+OS CPE: cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:5 cpe:/o:linux:linux_kernel:6  
+OS details: Linux 2.6.32, Linux 5.0 - 6.2  
+Network Distance: 0 hops  
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .  
+Nmap done: 1 IP address (1 host up) scanned in 1.52 seconds
+
+# ✅ Summary:
+- Detected device is running **Linux**
+- Kernel version likely falls between **2.6.32 and 6.2**
+- Only open port is **631/tcp** (CUPS printing service)
+- Host is **0 hops away**, meaning it's the same device (your own machine)
